@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spider.OpenQuant4", "Spider.OpenQuant4\Spider.OpenQuant4.csproj", "{BF8702CB-9299-417B-9EBA-CA01F70D7EFA}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://spider.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Spider.OpenQuant4\\Spider.OpenQuant4.csproj
+		SccProjectName1 = Spider.OpenQuant4
+		SccLocalPath1 = Spider.OpenQuant4
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF8702CB-9299-417B-9EBA-CA01F70D7EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF8702CB-9299-417B-9EBA-CA01F70D7EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF8702CB-9299-417B-9EBA-CA01F70D7EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF8702CB-9299-417B-9EBA-CA01F70D7EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{575F2DB8-0FAC-4C51-A922-3ED9C54FCB68}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Spider.Trading.OpenQuant3</RootNamespace>
+    <AssemblyName>Spider.Trading.OpenQuant3</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenQuant.API">
+      <HintPath>..\Lib\OpenQuant.API.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenQuant.Config">
+      <HintPath>..\Lib\OpenQuant.Config.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenQuant.ObjectMap">
+      <HintPath>..\Lib\OpenQuant.ObjectMap.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenQuant.Trading">
+      <HintPath>..\Lib\OpenQuant.Trading.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenQuant.Updates">
+      <HintPath>..\Lib\OpenQuant.Updates.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseStrategy.cs" />
+    <Compile Include="BaseStrategy.Init.cs" />
+    <Compile Include="BaseStrategy.Props.cs" />
+    <Compile Include="BaseStrategy.Params.cs" />
+    <Compile Include="BaseStrategy.DataHandling.cs" />
+    <Compile Include="Calculations\BaseStrategyCalculator.cs" />
+    <Compile Include="Calculations\IStrategyCalculator.cs" />
+    <Compile Include="Calculations\PriceCalculator.cs" />
+    <Compile Include="Calculations\QuantityCalculator.cs" />
+    <Compile Include="Calculations\QuantityCalc\BaseQuantityCalculator.cs" />
+    <Compile Include="Calculations\QuantityCalc\CalculatedBasedOnRiskAmountQuantityCalculator.cs" />
+    <Compile Include="Calculations\QuantityCalc\FixedAmountQuantityCalculator.cs" />
+    <Compile Include="Calculations\SlippageCalc\SlippageCalculator.cs" />
+    <Compile Include="Calculations\StopPriceCalc\BaseStopPriceCalculator.cs" />
+    <Compile Include="Calculations\StopPriceCalc\FixedAmountStopCalculator.cs" />
+    <Compile Include="Calculations\StopPriceCalc\OpeningGapStopCalculator.cs" />
+    <Compile Include="Calculations\StopPriceCalc\OpeningGapOrProtectiveStopCalculator.cs" />
+    <Compile Include="Calculations\StopPriceCalc\OpeningGapOrRetracementEntryStopCalculator.cs" />
+    <Compile Include="Calculations\StopPriceCalc\ProtectiveStopBasedOnAtrCalculator.cs" />
+    <Compile Include="Calculations\StopPriceCalc\RetracementEntryBasedOnAtrCalculator.cs" />
+    <Compile Include="BaseStrategy.OrderHandling.cs" />
+    <Compile Include="Entities\ClosingQuantityCalculatorInput.cs" />
+    <Compile Include="Entities\CurrentOpenPosition.cs" />
+    <Compile Include="Entities\PriceCalculatorInput.cs" />
+    <Compile Include="Entities\PriceGapCalculatorInput.cs" />
+    <Compile Include="Calculations\PriceGapTriggerCalculator.cs" />
+    <Compile Include="Entities\OpeningQuantityCalculatorInput.cs" />
+    <Compile Include="Entities\RiskCalculationInput.cs" />
+    <Compile Include="Entities\RiskCalculationOutput.cs" />
+    <Compile Include="Calculations\RiskCalculator.cs" />
+    <Compile Include="Calculations\StopPriceTriggerCalculator.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="BaseStrategy.Public.Methods.cs" />
+    <Compile Include="BaseStrategy.PriceHandling.Methods.cs" />
+    <Compile Include="Diagnostics\LoggingConfig.cs" />
+    <Compile Include="Diagnostics\LoggingUtility.cs" />
+    <Compile Include="Enums\BarDuration.cs" />
+    <Compile Include="Enums\GapType.cs" />
+    <Compile Include="Enums\LossBasedStopPriceReferenceStrategy.cs" />
+    <Compile Include="Enums\OrderRetrialStrategy.cs" />
+    <Compile Include="Enums\OrderTriggerStrategy.cs" />
+    <Compile Include="Enums\PositionSizingCalculationStrategy.cs" />
+    <Compile Include="Enums\PriceCalculationStrategy.cs" />
+    <Compile Include="Enums\RiskAmountCalculationStrategy.cs" />
+    <Compile Include="Enums\RiskAppetiteStrategy.cs" />
+    <Compile Include="Enums\StopCalculationReferencePriceStrategy.cs" />
+    <Compile Include="Enums\StopPriceCalculationStrategy.cs" />
+    <Compile Include="Events\EventDelegates.cs" />
+    <Compile Include="Exceptions\StrategyIncorrectInputException.cs" />
+    <Compile Include="Factories\QuantityCalculatorFactory.cs" />
+    <Compile Include="Factories\StopPriceCalculatorFactory.cs" />
+    <Compile Include="SolutionManagement\BaseTemplate.cs" />
+    <Compile Include="SolutionManagement\CloseOrderProjectNames.cs" />
+    <Compile Include="SolutionManagement\OpenLongTemplate.cs" />
+    <Compile Include="SolutionManagement\OpenOrderProjectNames.cs" />
+    <Compile Include="SolutionManagement\OpenShortTemplate.cs" />
+    <Compile Include="SolutionManagement\ParamsSetterUtility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolutionManagement\ProjectToRun.cs" />
+    <Compile Include="SolutionManagement\ProtectOrderProjectNames.cs" />
+    <Compile Include="SolutionManagement\ProtectOrderTemplate.cs" />
+    <Compile Include="Strategies\Closing\BaseClosingStrategy.cs" />
+    <Compile Include="Strategies\Closing\BaseClosingStrategy.DataHandling.cs" />
+    <Compile Include="Strategies\Opening\BaseOpeningStrategy.DataHandling.cs" />
+    <Compile Include="SolutionManagement\CloseOrderTemplate.cs" />
+    <Compile Include="Util\InstrumentExtenstions.cs" />
+    <Compile Include="Util\LockObjectManager.cs" />
+    <Compile Include="StrategyPortfolioManager.cs" />
+    <Compile Include="SolutionManagement\ParamsGeneratorUtility.cs" />
+    <Compile Include="Util\PositionSizeHolder.cs" />
+    <Compile Include="Util\SolutionUtility.cs" />
+    <Compile Include="Util\StopPriceHolder.cs" />
+    <Compile Include="Strategies\Opening\BaseOpeningStrategy.cs" />
+    <Compile Include="Strategies\Opening\BaseOpeningStrategy.Params.cs" />
+    <Compile Include="Util\BarExtenstions.cs" />
+    <Compile Include="Util\DateTimeExtensions.cs" />
+    <Compile Include="Validators\Closing\MultipleClosingStrategiesForSymbolValidator.cs" />
+    <Compile Include="Validators\Opening\OpeningInvestmentValidator.cs" />
+    <Compile Include="Validators\OrderTriggerValidator.cs" />
+    <Compile Include="Validators\SlippageValidator.cs" />
+    <Compile Include="Validators\StopPriceValidator.cs" />
+    <Compile Include="Validators\TriggerRetryTimeIntervalValidator.cs" />
+    <Compile Include="Validators\TriggerTimeValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Strategies\Closing\BaseClosingStrategy.Public.Methods.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,50 @@
+﻿namespace Spider.OpenQuant4.Util
+{
+    public enum OpenOrderProjectNames
+    {
+        Open_01,
+        Open_02,
+        Open_03,
+        Open_04,
+        Open_05,
+        Open_06,
+        Open_07,
+        Open_08,
+        Open_09,
+        Open_10,
+        Open_11,
+        Open_12,
+        Open_13,
+        Open_14,
+        Open_15,
+        Open_16,
+        Open_17,
+        Open_18,
+        Open_19,
+        Open_20
+    }
+
+    public enum ReverseOpenOrderProjectNames
+    {
+        ReverseOpen_01,
+        ReverseOpen_02,
+        ReverseOpen_03,
+        ReverseOpen_04,
+        ReverseOpen_05,
+        ReverseOpen_06,
+        ReverseOpen_07,
+        ReverseOpen_08,
+        ReverseOpen_09,
+        ReverseOpen_10,
+        ReverseOpen_11,
+        ReverseOpen_12,
+        ReverseOpen_13,
+        ReverseOpen_14,
+        ReverseOpen_15,
+        ReverseOpen_16,
+        ReverseOpen_17,
+        ReverseOpen_18,
+        ReverseOpen_19,
+        ReverseOpen_20
+    }
+}

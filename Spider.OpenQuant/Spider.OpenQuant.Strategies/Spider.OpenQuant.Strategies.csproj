@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA5017FA-86B5-4E8F-90C8-402F7B42E8BF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Spider.OpenQuant.Strategies</RootNamespace>
+    <AssemblyName>Spider.OpenQuant.Strategies</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenQuant.API">
+      <HintPath>C:\Program Files (x86)\SmartQuant Ltd\OpenQuant 2\Bin\OpenQuant.API.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenQuant.ObjectMap">
+      <HintPath>C:\Program Files (x86)\SmartQuant Ltd\OpenQuant 2\Bin\OpenQuant.ObjectMap.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenQuant.Trading">
+      <HintPath>C:\Program Files (x86)\SmartQuant Ltd\OpenQuant 2\Bin\OpenQuant.Trading.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseFlipFlopOpeningStrategy.cs" />
+    <Compile Include="BaseProtectiveStopClosingStrategy.cs" />
+    <Compile Include="Entities\FlipFlopPair.cs" />
+    <Compile Include="Old\BaseClosingStrategyOld.cs" />
+    <Compile Include="BaseClosingStrategy.cs" />
+    <Compile Include="Old\BaseOpeningStrategyOld.cs" />
+    <Compile Include="BaseOpeningStrategy.cs" />
+    <Compile Include="BaseStopClosingStrategy.cs" />
+    <Compile Include="Old\BaseStrategyOld.cs" />
+    <Compile Include="BaseStopOpeningStrategy.cs" />
+    <Compile Include="BaseStrategy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\BarDuration.cs" />
+    <Compile Include="Util\BarExtenstions.cs" />
+    <Compile Include="Util\DataLoader.cs" />
+    <Compile Include="Util\DateTimeExtensions.cs" />
+    <Compile Include="Util\Delegates.cs" />
+    <Compile Include="Util\FlipFlopPairAttribute.cs" />
+    <Compile Include="Util\InstrumentExtenstions.cs" />
+    <Compile Include="Util\LoggingUtility.cs" />
+    <Compile Include="Util\PeriodConstants.cs" />
+    <Compile Include="Util\PositionSizeManager.cs" />
+    <Compile Include="Util\PriceCalculator.cs" />
+    <Compile Include="Util\QuantityCalculator.cs" />
+    <Compile Include="Util\StopPriceManager.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D8FFB07-9182-40AE-86F8-8D2382278B51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Spider.OpenQuant.TradeClient5</RootNamespace>
+    <AssemblyName>Spider.OpenQuant.TradeClient5</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EasyNetQ, Version=0.47.10.381, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EasyNetQ.0.47.10.381\lib\net40\EasyNetQ.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EasyNetQ.Management.Client, Version=0.47.10.381, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EasyNetQ.Management.Client.0.47.10.381\lib\net40\EasyNetQ.Management.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.0.1\lib\net40\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenQuant.API">
+      <HintPath>..\Lib\OpenQuant.API.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=3.4.3.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\RabbitMQ.Client.3.4.3\lib\net35\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseStrategy.SpreadManagement.cs" />
+    <Compile Include="Base\BaseStrategy.OrderProcessing.cs" />
+    <Compile Include="Base\BaseStrategy.cs" />
+    <Compile Include="Base\BaseStrategy.DataHandling.cs" />
+    <Compile Include="Base\BaseStrategy.EventProcessing.cs" />
+    <Compile Include="Base\BaseStrategy.QuoteClient.cs" />
+    <Compile Include="Base\BaseStrategy.TradeLegs.cs" />
+    <Compile Include="Base\BaseStrategy.BarProcessing.cs" />
+    <Compile Include="Base\BaseStrategy.Util.cs" />
+    <Compile Include="Base\BaseStrategy.Init.cs" />
+    <Compile Include="Base\BaseStrategy.Params.cs" />
+    <Compile Include="Base\BaseStraegy.QuoteHandling.cs" />
+    <Compile Include="Base\BaseQuantityFocusedStrategy.cs" />
+    <Compile Include="Base\BaseStrategy.IndicatorProcessing.cs" />
+    <Compile Include="Closing\BaseClosingStrategy.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Entities\SpiderPosition.cs" />
+    <Compile Include="Extensions\BarExtenstions.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\QuoteExtenstions.cs" />
+    <Compile Include="Opening\BaseOpeningStrategy.cs" />
+    <Compile Include="Opening\BaseOpeningStrategy.Params.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\SpiderBar.cs" />
+    <Compile Include="Entities\SpiderInstrument.cs" />
+    <Compile Include="Entities\SpiderQuote.cs" />
+    <Compile Include="Entities\Messages\OnBarMessage.cs" />
+    <Compile Include="Entities\Messages\OnBarOpenMessage.cs" />
+    <Compile Include="Entities\Messages\OnQuoteMessage.cs" />
+    <Compile Include="QuoteServer\QueueInitializer.cs" />
+    <Compile Include="QuoteServer\QuoteBus.cs" />
+    <Compile Include="QuoteServer\QuotingStrategy.cs" />
+    <Compile Include="Scaling\AmountTradeLeg.cs" />
+    <Compile Include="Scaling\BaseTradeLeg.cs" />
+    <Compile Include="Scaling\OrderTracker.cs" />
+    <Compile Include="Scaling\QuantityTradeLeg.cs" />
+    <Compile Include="Solution\LogConfigurator.cs" />
+    <Compile Include="Solution\ProjectToRun.cs" />
+    <Compile Include="Solution\ProjectType.cs" />
+    <Compile Include="Util\BarNameManager.cs" />
+    <Compile Include="Util\CloseOrderProjectNames.cs" />
+    <Compile Include="Util\EnvironmentManager.cs" />
+    <Compile Include="Util\LoggerExtensions.cs" />
+    <Compile Include="Util\LoggingUtility.cs" />
+    <Compile Include="Util\OpenOrderProjectNames.cs" />
+    <Compile Include="Validators\TriggerRetryTimeIntervalValidator.cs" />
+    <Compile Include="Validators\TriggerTimeValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="QuoteServer\Entities\" />
+    <Folder Include="Reversing\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
